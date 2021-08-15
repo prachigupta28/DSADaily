@@ -15,18 +15,18 @@ public class SampleClass {
         if (n < 2) {
             return;
         }
-        int mid = n / 2;
-        int[] l = new int[mid];
-        int[] r = new int[n - mid];
-        for (int i = 0; i < mid; i++) {
+        int middle = n / 2;
+        int[] l = new int[middle];
+        int[] r = new int[n - middle];
+        for (int i = 0; i < middle; i++) {
             l[i] = a[i];
         }
-        for (int i = mid; i < n; i++) {
-            r[i - mid] = a[i];
+        for (int i = middle; i < n; i++) {
+            r[i - middle] = a[i];
         }
-        mergeSort(l, mid);
-        mergeSort(r, n - mid);
-        merge(a, l, r, mid, n = mid);
+        mergeSort(l, middle);
+        mergeSort(r, n - middle);
+        merge(a, l, r, middle, n = middle);
     }
 
     public static void merge(int[] a, int[] l, int[] r, int left, int right) {
