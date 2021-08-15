@@ -16,17 +16,17 @@ public class SampleClass {
             return;
         }
         int middle = n / 2;
-        int[] l = new int[middle];
+        int[] left = new int[middle];
         int[] r = new int[n - middle];
         for (int i = 0; i < middle; i++) {
-            l[i] = a[i];
+            left[i] = a[i];
         }
         for (int i = middle; i < n; i++) {
             r[i - middle] = a[i];
         }
-        mergeSort(l, middle);
+        mergeSort(left, middle);
         mergeSort(r, n - middle);
-        merge(a, l, r, middle, n = middle);
+        merge(a, left, r, middle, n = middle);
     }
 
     public static void merge(int[] a, int[] l, int[] r, int left, int right) {
