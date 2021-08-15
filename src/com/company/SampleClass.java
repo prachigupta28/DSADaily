@@ -15,18 +15,18 @@ public class SampleClass {
         if (n < 2) {
             return;
         }
-        int middle = n / 2;
-        int[] left = new int[middle];
-        int[] r = new int[n - middle];
-        for (int i = 0; i < middle; i++) {
+        int mid = n / 2;
+        int[] left = new int[mid];
+        int[] r = new int[n - mid];
+        for (int i = 0; i < mid; i++) {
             left[i] = a[i];
         }
-        for (int i = middle; i < n; i++) {
-            r[i - middle] = a[i];
+        for (int i = mid; i < n; i++) {
+            r[i - mid] = a[i];
         }
-        mergeSort(left, middle);
-        mergeSort(r, n - middle);
-        merge(a, left, r, middle, n = middle);
+        mergeSort(left, mid);
+        mergeSort(r, n - mid);
+        merge(a, left, r, mid, n = mid);
     }
 
     public static void merge(int[] a, int[] l, int[] r, int left, int right) {
@@ -48,8 +48,8 @@ public class SampleClass {
 
     @Test
     public void shouldMerge() {
-        int[] actualArray = {5, 1, 6, 2, 3, 4,7};
-        int[] expected = {1, 2, 3, 4, 5, 6,7};
+        int[] actualArray = {5, 1, 6, 2, 3, 4, 7};
+        int[] expected = {1, 2, 3, 4, 5, 6, 7};
         SampleClass.mergeSort(actualArray, actualArray.length);
         assertArrayEquals(expected, actualArray);
     }
