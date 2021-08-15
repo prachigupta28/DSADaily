@@ -48,7 +48,7 @@ public class SampleClass {
 
     @Test
     public void shouldMerge() {
-        int[] actual = {5, 1, 6, 2, 3, 4,7};
+        int[] actualArray = {5, 1, 6, 2, 3, 4,7};
         int[] expected = {1, 2, 3, 4, 5, 6,7};
         SampleClass.mergeSort(actual, actual.length);
         assertArrayEquals(expected, actual);
