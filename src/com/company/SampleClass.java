@@ -16,17 +16,17 @@ public class SampleClass {
             return;
         }
         int mid = n / 2;
-        int[] l = new int[mid];
+        int[] left = new int[mid];
         int[] r = new int[n - mid];
         for (int i = 0; i < mid; i++) {
-            l[i] = a[i];
+            left[i] = a[i];
         }
         for (int i = mid; i < n; i++) {
             r[i - mid] = a[i];
         }
-        mergeSort(l, mid);
+        mergeSort(left, mid);
         mergeSort(r, n - mid);
-        merge(a, l, r, mid, n = mid);
+        merge(a, left, r, mid, n = mid);
     }
 
     public static void merge(int[] a, int[] l, int[] r, int left, int right) {
@@ -48,9 +48,9 @@ public class SampleClass {
 
     @Test
     public void shouldMerge() {
-        int[] actual = {5, 1, 6, 2, 3, 4};
-        int[] expected = {1, 2, 3, 4, 5, 6};
-        SampleClass.mergeSort(actual, actual.length);
-        assertArrayEquals(expected, actual);
+        int[] actualArray = {5, 1, 6, 2, 3, 4, 7};
+        int[] expected = {1, 2, 3, 4, 5, 6, 7};
+        SampleClass.mergeSort(actualArray, actualArray.length);
+        assertArrayEquals(expected, actualArray);
     }
 }
